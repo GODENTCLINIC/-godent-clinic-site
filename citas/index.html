@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agenda de Citas – GODENT</title>
+<meta name="description" content="Agenda tu cita con GODENT: elige horario en línea o escribe por WhatsApp.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="stylesheet" href="/style.css">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '846320771415849');
+fbq('track', 'PageView');
+fbq('track', 'Schedule');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"
+/></noscript>
+</head>
+<body>
+<header class="container header">
+  <div class="brand">
+    <img src="/assets/logo.png" alt="GODENT logo" />
+    <div>
+      <strong>GODENT</strong><br>
+      <small>Clínica Dental</small>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="/">Inicio</a>
+    <a href="/#servicios">Servicios</a>
+    <a href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita" class="btn btn-wa">WhatsApp</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="card">
+    <h1>Agenda tu cita</h1>
+    <p>Elige fecha y hora. Si prefieres, escríbenos directo por WhatsApp.</p>
+    <div class="cta" style="margin:12px 0 20px">
+      <a class="btn btn-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">WhatsApp</a>
+    </div>
+    <!-- Calendly embed: reemplaza data-url con tu enlace exacto -->
+    <div class="card">
+      <div class="calendly-inline-widget" data-url="https://calendly.com/" style="min-width:320px;height:720px"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    </div>
+  </div>
+</main>
+
+<footer class="container footer">
+  © GODENT Clínica Dental · <a href="/">Inicio</a>
+</footer>
+</body>
+</html>
