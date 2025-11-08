@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- Open Graph básico -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Agenda tu cita | GODENT Clínica Dental">
   <meta property="og:description" content="Elige sucursal y horario. También puedes agendar por WhatsApp.">
   <meta property="og:image" content="https://godent.clinic/assets/logo.png">
@@ -26,17 +26,13 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"/></noscript>
 
-  <!-- Calendly -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
   <style>
-    /* toques ligeros usando tu css base */
-    .tabs {display:flex; gap:.5rem; flex-wrap:wrap; margin:12px 0 16px}
-    .tab-btn{border:1px solid #e1e5ea; padding:.55rem .9rem; border-radius:.6rem; cursor:pointer; background:#fff}
-    .tab-btn[aria-selected="true"]{background:#0ea5e9; color:#fff; border-color:#0ea5e9}
-    .note {font-size:.92rem; color:#607080; margin:.5rem 0 1rem}
-    .links-fallback a{display:inline-block; margin-right:.75rem}
-    .calendly-inline-widget{min-width:320px; height:720px}
+    .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:12px 0 16px}
+    .tab-btn{border:1px solid #e1e5ea;padding:.55rem .9rem;border-radius:.6rem;cursor:pointer;background:#fff}
+    .tab-btn[aria-selected="true"]{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
+    .note{font-size:.92rem;color:#607080;margin:.5rem 0 1rem}
+    .links-fallback a{display:inline-block;margin-right:.75rem}
+    #cal-iframe{width:100%;min-height:720px;border:0}
   </style>
 </head>
 <body>
@@ -67,13 +63,11 @@
       <button id="tab-escandon" class="tab-btn" role="tab" aria-selected="false" aria-controls="cal-wrap">San Juan de Guadalupe</button>
     </div>
 
-    <p class="note" id="hours-text">
-      Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.
-    </p>
+    <p class="note" id="hours-text">Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.</p>
 
-    <!-- Contenedor Calendly -->
-    <div id="cal-wrap" class="card" role="tabpanel" aria-labelledby="tab-pozos">
-      <div id="calendly-inline" class="calendly-inline-widget"></div>
+    <!-- Calendly por IFRAME (más fiable que JS) -->
+    <div id="cal-wrap" class="card" role="tabpanel" aria-labelledby="tab-pozos" style="overflow:hidden">
+      <iframe id="cal-iframe" title="Agenda GODENT"></iframe>
     </div>
 
     <!-- Fallback de enlaces directos -->
@@ -90,41 +84,46 @@
 </footer>
 
 <script>
-  // Enlaces de tus eventos
-  const POZOS = "https://calendly.com/productosdelmomento/consulta-limpieza-primera-visita-villa-de-pozos";
+  // URLs de tus eventos
+  const POZOS    = "https://calendly.com/productosdelmomento/consulta-limpieza-primera-visita-villa-de-pozos";
   const ESCANDON = "https://calendly.com/productosdelmomento/30min";
 
-  const calNode = document.getElementById('calendly-inline');
-  const tabPozos = document.getElementById('tab-pozos');
-  const tabEscandon = document.getElementById('tab-escandon');
-  const hoursText = document.getElementById('hours-text');
+  const $tabPozos    = document.getElementById('tab-pozos');
+  const $tabEscandon = document.getElementById('tab-escandon');
+  const $hours       = document.getElementById('hours-text');
+  const $iframe      = document.getElementById('cal-iframe');
 
-  function loadCalendly(url){
-    // Vaciar y volver a inicializar Calendly inline
-    calNode.innerHTML = "";
-    window.Calendly && window.Calendly.initInlineWidget({
-      url,
-      parentElement: calNode
-    });
+  function buildSrc(base){
+    const u = new URL(base);
+    u.searchParams.set('embed_domain','godent.clinic');
+    u.searchParams.set('embed_type','Inline');
+    u.searchParams.set('hide_event_type_details','1');
+    u.searchParams.set('hide_gdpr_banner','1');
+    return u.toString();
   }
 
-  // Estado inicial: Pozos
-  loadCalendly(POZOS);
+  function setPozos(){
+    $tabPozos.setAttribute('aria-selected','true');
+    $tabEscandon.setAttribute('aria-selected','false');
+    $hours.textContent = "Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.";
+    $iframe.src = buildSrc(POZOS);
+    history.replaceState(null, "", "#pozos");
+  }
 
-  tabPozos.addEventListener('click', () => {
-    tabPozos.setAttribute('aria-selected','true');
-    tabEscandon.setAttribute('aria-selected','false');
-    hoursText.textContent = "Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.";
-    loadCalendly(POZOS);
-  });
+  function setEscandon(){
+    $tabEscandon.setAttribute('aria-selected','true');
+    $tabPozos.setAttribute('aria-selected','false');
+    $hours.textContent = "Horarios Escandón: Lun a Sáb — 10:00–14:00 y 16:00–20:00.";
+    $iframe.src = buildSrc(ESCANDON);
+    history.replaceState(null, "", "#escandon");
+  }
 
-  tabEscandon.addEventListener('click', () => {
-    tabEscandon.setAttribute('aria-selected','true');
-    tabPozos.setAttribute('aria-selected','false');
-    hoursText.textContent = "Horarios Escandón: Lun a Sáb — 10:00–14:00 y 16:00–20:00.";
-    loadCalendly(ESCANDON);
-  });
+  // Clicks
+  $tabPozos.addEventListener('click', setPozos);
+  $tabEscandon.addEventListener('click', setEscandon);
+
+  // Abrir directo por hash
+  if (location.hash === '#escandon') setEscandon(); else setPozos();
 </script>
 </body>
 </html>
-
