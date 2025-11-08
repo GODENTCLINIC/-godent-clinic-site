@@ -1,38 +1,49 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Agenda de Citas – GODENT</title>
-<meta name="description" content="Agenda tu cita con GODENT: elige horario en línea o escribe por WhatsApp.">
-<link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/style.css">
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '846320771415849');
-fbq('track', 'PageView');
-fbq('track', 'Schedule');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"
-/></noscript>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agenda tu cita | GODENT Clínica Dental</title>
+  <meta name="description" content="Agenda tu cita en GODENT. Elige sucursal y horario o escríbenos por WhatsApp.">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Open Graph básico -->
+  <meta property="og:title" content="Agenda tu cita | GODENT Clínica Dental">
+  <meta property="og:description" content="Elige sucursal y horario. También puedes agendar por WhatsApp.">
+  <meta property="og:image" content="https://godent.clinic/assets/logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','846320771415849');fbq('track','PageView');fbq('track','Schedule');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"/></noscript>
+
+  <!-- Calendly -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <style>
+    /* toques ligeros usando tu css base */
+    .tabs {display:flex; gap:.5rem; flex-wrap:wrap; margin:12px 0 16px}
+    .tab-btn{border:1px solid #e1e5ea; padding:.55rem .9rem; border-radius:.6rem; cursor:pointer; background:#fff}
+    .tab-btn[aria-selected="true"]{background:#0ea5e9; color:#fff; border-color:#0ea5e9}
+    .note {font-size:.92rem; color:#607080; margin:.5rem 0 1rem}
+    .links-fallback a{display:inline-block; margin-right:.75rem}
+    .calendly-inline-widget{min-width:320px; height:720px}
+  </style>
 </head>
 <body>
 <header class="container header">
   <div class="brand">
     <img src="/assets/logo.png" alt="GODENT logo" />
-    <div>
-      <strong>GODENT</strong><br>
-      <small>Clínica Dental</small>
-    </div>
+    <div><strong>GODENT</strong><br><small>Clínica Dental</small></div>
   </div>
   <nav class="nav">
     <a href="/">Inicio</a>
@@ -44,14 +55,32 @@ src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"
 <main class="container">
   <div class="card">
     <h1>Agenda tu cita</h1>
-    <p>Elige fecha y hora. Si prefieres, escríbenos directo por WhatsApp.</p>
-    <div class="cta" style="margin:12px 0 20px">
-      <a class="btn btn-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">WhatsApp</a>
+    <p>Elige la sucursal y selecciona tu horario. Si prefieres, escríbenos directo por WhatsApp.</p>
+
+    <div class="cta" style="margin:12px 0 18px">
+      <a class="btn btn-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">WhatsApp 444 323 8483</a>
     </div>
-    <!-- Calendly embed: reemplaza data-url con tu enlace exacto -->
-    <div class="card">
-      <div class="calendly-inline-widget" data-url="https://calendly.com/" style="min-width:320px;height:720px"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <!-- Tabs de sucursales -->
+    <div class="tabs" role="tablist" aria-label="Sucursales">
+      <button id="tab-pozos" class="tab-btn" role="tab" aria-selected="true" aria-controls="cal-wrap">Villa de Pozos</button>
+      <button id="tab-escandon" class="tab-btn" role="tab" aria-selected="false" aria-controls="cal-wrap">San Juan de Guadalupe</button>
+    </div>
+
+    <p class="note" id="hours-text">
+      Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.
+    </p>
+
+    <!-- Contenedor Calendly -->
+    <div id="cal-wrap" class="card" role="tabpanel" aria-labelledby="tab-pozos">
+      <div id="calendly-inline" class="calendly-inline-widget"></div>
+    </div>
+
+    <!-- Fallback de enlaces directos -->
+    <div class="links-fallback" style="margin-top:10px">
+      <small>Si no ves el calendario, usa estos enlaces:</small><br>
+      <a id="link-pozos" href="https://calendly.com/productosdelmomento/consulta-limpieza-primera-visita-villa-de-pozos" target="_blank" rel="noopener">Abrir Villa de Pozos</a>
+      <a id="link-escandon" href="https://calendly.com/productosdelmomento/30min" target="_blank" rel="noopener">Abrir San Juan de Guadalupe</a>
     </div>
   </div>
 </main>
@@ -59,5 +88,43 @@ src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"
 <footer class="container footer">
   © GODENT Clínica Dental · <a href="/">Inicio</a>
 </footer>
+
+<script>
+  // Enlaces de tus eventos
+  const POZOS = "https://calendly.com/productosdelmomento/consulta-limpieza-primera-visita-villa-de-pozos";
+  const ESCANDON = "https://calendly.com/productosdelmomento/30min";
+
+  const calNode = document.getElementById('calendly-inline');
+  const tabPozos = document.getElementById('tab-pozos');
+  const tabEscandon = document.getElementById('tab-escandon');
+  const hoursText = document.getElementById('hours-text');
+
+  function loadCalendly(url){
+    // Vaciar y volver a inicializar Calendly inline
+    calNode.innerHTML = "";
+    window.Calendly && window.Calendly.initInlineWidget({
+      url,
+      parentElement: calNode
+    });
+  }
+
+  // Estado inicial: Pozos
+  loadCalendly(POZOS);
+
+  tabPozos.addEventListener('click', () => {
+    tabPozos.setAttribute('aria-selected','true');
+    tabEscandon.setAttribute('aria-selected','false');
+    hoursText.textContent = "Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.";
+    loadCalendly(POZOS);
+  });
+
+  tabEscandon.addEventListener('click', () => {
+    tabEscandon.setAttribute('aria-selected','true');
+    tabPozos.setAttribute('aria-selected','false');
+    hoursText.textContent = "Horarios Escandón: Lun a Sáb — 10:00–14:00 y 16:00–20:00.";
+    loadCalendly(ESCANDON);
+  });
+</script>
 </body>
 </html>
+
