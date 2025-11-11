@@ -108,5 +108,20 @@
   <a href="tel:+524443238483">Tel. 444 323 8483</a> ·
   <a href="/privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
 </footer>
+  <script>
+// Enviar "Schedule" cuando hagan clic en cualquier link que abra /citas/
+document.querySelectorAll('a[href^="/citas/"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    try { fbq('track','Schedule'); } catch(e){}
+  });
+});
+
+// (Opcional) Enviar "Contact" cuando toquen WhatsApp
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    try { fbq('track','Contact'); } catch(e){}
+  });
+});
+</script>
 </body>
 </html>
