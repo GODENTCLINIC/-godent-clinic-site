@@ -3,148 +3,340 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Agenda tu cita | GODENT Clínica Dental</title>
-  <meta name="description" content="Agenda tu cita en GODENT. Elige sucursal y horario o escríbenos por WhatsApp.">
+
+  <title>GODENT Clínica Dental en San Luis Potosí | Prótesis, Limpieza, Resinas y Urgencias</title>
+  <meta name="description" content="GODENT Clínica Dental en San Luis Potosí. Agenda por WhatsApp para prótesis, limpiezas dentales, resinas, valoraciones y urgencias. Sucursales en Villa de Pozos y Escandón." />
+
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="stylesheet" href="/style.css" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Agenda tu cita | GODENT Clínica Dental">
-  <meta property="og:description" content="Elige sucursal y horario. También puedes agendar por WhatsApp.">
-  <meta property="og:image" content="https://godent.clinic/assets/logo.png">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="GODENT Clínica Dental" />
+  <meta property="og:description" content="Atención dental clara, amable y cercana en San Luis Potosí. Agenda por WhatsApp o en línea." />
+  <meta property="og:image" content="https://godent.clinic/assets/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index,follow" />
 
-  <!-- Meta Pixel -->
+  <!-- Meta Pixel (PageView) -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  n.push=n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
   (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init','846320771415849');
-  fbq('track','PageView');
+  fbq('init','846320771415849');fbq('track','PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1"/></noscript>
 
-  <style>
-    .tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:12px 0 16px}
-    .tab-btn{border:1px solid #e1e5ea;padding:.55rem .9rem;border-radius:.6rem;cursor:pointer;background:#fff}
-    .tab-btn[aria-selected="true"]{background:#0ea5e9;color:#fff;border-color:#0ea5e9}
-    .note{font-size:.92rem;color:#607080;margin:.5rem 0 1rem}
-    .links-fallback a{display:inline-block;margin-right:.75rem}
-    #cal-iframe{width:100%;min-height:720px;border:0}
-  </style>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=846320771415849&ev=PageView&noscript=1" />
+  </noscript>
 </head>
+
 <body>
-<header class="container header">
-  <div class="brand">
-    <img src="/assets/logo.png" alt="GODENT logo" />
-    <div><strong>GODENT</strong><br><small>Clínica Dental</small></div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/assets/logo.png" alt="Logo de GODENT Clínica Dental" />
+      <div>
+        <strong>GODENT</strong>
+        <small>Clínica Dental</small>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#sucursales">Sucursales</a>
+      <a href="/citas/#escandon">Citas en línea</a>
+      <a class="btn btn-wa nav-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">WhatsApp</a>
+    </nav>
   </div>
-  <nav class="nav">
-    <a href="/">Inicio</a>
-    <a href="/#servicios">Servicios</a>
-    <a href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita" class="btn btn-wa">WhatsApp</a>
-  </nav>
 </header>
 
-<main class="container">
-  <div class="card">
-    <h1>Agenda tu cita</h1>
-    <p>Elige la sucursal y selecciona tu horario. Si prefieres, escríbenos directo por WhatsApp.</p>
+<main>
 
-    <div class="cta" style="margin:12px 0 18px">
-      <a class="btn btn-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">WhatsApp 444 323 8483</a>
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="container hero">
+      <div class="hero-content">
+        <span class="badge">Atención dental clara y amable en SLP</span>
+
+        <h1>Recupera tu sonrisa con atención dental cercana y confiable</h1>
+
+        <p class="hero-text">
+          Agenda tu cita en GODENT para prótesis, limpiezas, resinas, valoraciones y urgencias dentales.
+          Te explicamos tus opciones con claridad para que tomes una mejor decisión para tu salud bucal.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-wa btn-lg" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">
+            Agendar por WhatsApp
+          </a>
+          <a class="btn btn-primary btn-lg" href="/citas/#escandon">
+            Elegir horario en línea
+          </a>
+          <a class="btn btn-light btn-lg" href="tel:+524443238483">
+            Llamar 444 323 8483
+          </a>
+        </div>
+
+        <div class="trust-row">
+          <div>
+            <strong>2 sucursales</strong>
+            <span>Villa de Pozos y Escandón</span>
+          </div>
+          <div>
+            <strong>Agenda fácil</strong>
+            <span>WhatsApp, llamada o en línea</span>
+          </div>
+          <div>
+            <strong>Urgencias</strong>
+            <span>Domingos con previa confirmación</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-logo-box">
+          <img src="/assets/logo.png" alt="GODENT Dental Clinic" />
+        </div>
+
+        <div class="quick-card">
+          <h2>¿Necesitas una cita?</h2>
+          <p>Escríbenos por WhatsApp y te ayudamos a elegir sucursal, horario y tipo de atención.</p>
+          <a class="btn btn-wa full" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">
+            Enviar mensaje
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="container section">
+    <div class="section-head">
+      <span class="eyebrow">Servicios principales</span>
+      <h2>Atención dental para cuidar, restaurar y mejorar tu sonrisa</h2>
+      <p>
+        En GODENT te orientamos de forma clara sobre tus opciones, costos y próximos pasos.
+      </p>
     </div>
 
-    <!-- Tabs de sucursales -->
-    <div class="tabs" role="tablist" aria-label="Sucursales">
-      <button id="tab-pozos" class="tab-btn" role="tab" aria-selected="true" aria-controls="cal-wrap">Villa de Pozos</button>
-      <button id="tab-escandon" class="tab-btn" role="tab" aria-selected="false" aria-controls="cal-wrap">San Juan de Guadalupe</button>
+    <div class="services-grid">
+      <article class="card service-card">
+        <div class="icon">🦷</div>
+        <h3>Prótesis dentales</h3>
+        <p>Opciones a medida para recuperar función, estética y confianza al sonreír.</p>
+        <a class="btn btn-outline" href="/citas/#escandon">Quiero una valoración</a>
+      </article>
+
+      <article class="card service-card">
+        <div class="icon">✨</div>
+        <h3>Limpieza dental</h3>
+        <p>Profilaxis y recomendaciones personalizadas para mantener una boca más sana.</p>
+        <a class="btn btn-outline" href="/citas/#escandon">Agendar limpieza</a>
+      </article>
+
+      <article class="card service-card">
+        <div class="icon">💎</div>
+        <h3>Resinas estéticas</h3>
+        <p>Restauraciones funcionales para reparar dientes dañados o afectados por caries.</p>
+        <a class="btn btn-outline" href="/citas/#escandon">Pedir presupuesto</a>
+      </article>
+
+      <article class="card service-card">
+        <div class="icon">📋</div>
+        <h3>Valoración dental</h3>
+        <p>Revisión inicial para conocer tu caso y explicarte alternativas de tratamiento.</p>
+        <a class="btn btn-outline" href="/citas/#escandon">Agendar valoración</a>
+      </article>
+
+      <article class="card service-card">
+        <div class="icon">🚨</div>
+        <h3>Urgencias dentales</h3>
+        <p>Atención los domingos con previa confirmación por WhatsApp.</p>
+        <a class="btn btn-outline" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20tengo%20una%20urgencia%20dental">
+          Solicitar ayuda
+        </a>
+      </article>
+
+      <article class="card service-card">
+        <div class="icon">😊</div>
+        <h3>Plan de tratamiento</h3>
+        <p>Te explicamos opciones, tiempos y costos con claridad antes de iniciar.</p>
+        <a class="btn btn-outline" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20tratamiento">
+          Pedir información
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ELEGIR GODENT -->
+  <section class="soft-section">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Por qué elegir GODENT</span>
+        <h2>Una experiencia dental más clara, humana y sencilla</h2>
+        <p>
+          Sabemos que muchos pacientes llegan con dudas sobre costos, tiempos y tratamientos.
+          Por eso buscamos darte una atención cercana, explicarte tus opciones y ayudarte a decidir con tranquilidad.
+        </p>
+
+        <div class="benefit-list">
+          <div>
+            <strong>Explicación clara</strong>
+            <span>Te orientamos sobre alternativas y próximos pasos.</span>
+          </div>
+          <div>
+            <strong>Atención amable</strong>
+            <span>Buscamos que te sientas escuchado desde el primer contacto.</span>
+          </div>
+          <div>
+            <strong>Agenda práctica</strong>
+            <span>Puedes contactarnos por WhatsApp, teléfono o cita en línea.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3>Agenda hoy tu cita</h3>
+        <p>
+          Escríbenos y dinos qué necesitas: limpieza, resina, prótesis, valoración o urgencia.
+        </p>
+        <a class="btn btn-wa full" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">
+          Hablar con GODENT
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCURSALES -->
+  <section id="sucursales" class="container section">
+    <div class="section-head">
+      <span class="eyebrow">Sucursales y horarios</span>
+      <h2>Elige la ubicación que te quede mejor</h2>
+      <p>Atendemos en Villa de Pozos y Escandón, San Luis Potosí.</p>
     </div>
 
-    <p class="note" id="hours-text">Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.</p>
+    <div class="locations-grid">
+      <article class="card location-card">
+        <h3>Villa de Pozos</h3>
+        <p><strong>Horario:</strong> Mar, Jue y Sáb · 16:00–20:00</p>
+        <p><strong>Dirección:</strong> Calle del Convento #153, San Francisco de los Pozos, San Luis Potosí.</p>
+        <div class="location-actions">
+          <a class="btn btn-primary" href="/citas/#pozos">Agendar en Pozos</a>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Calle%20del%20Convento%20153%20San%20Francisco%20de%20los%20Pozos%20San%20Luis%20Potos%C3%AD" target="_blank" rel="noopener">
+            Abrir Maps
+          </a>
+        </div>
+      </article>
 
-    <!-- Calendly por IFRAME (más fiable que JS) -->
-    <div id="cal-wrap" class="card" role="tabpanel" aria-labelledby="tab-pozos" style="overflow:hidden">
-      <iframe id="cal-iframe" title="Agenda GODENT"></iframe>
+      <article class="card location-card">
+        <h3>Escandón / San Juan de Guadalupe</h3>
+        <p><strong>Horario:</strong> L–S · 10:00–14:00 y 16:00–20:00</p>
+        <p><strong>Atención:</strong> Prótesis, limpiezas, resinas, valoraciones y tratamientos dentales.</p>
+        <div class="location-actions">
+          <a class="btn btn-primary" href="/citas/#escandon">Agendar en Escandón</a>
+          <a class="btn btn-outline" href="tel:+524443238483">Llamar</a>
+        </div>
+      </article>
+
+      <article class="card location-card urgent">
+        <h3>Urgencias dentales</h3>
+        <p><strong>Domingos:</strong> atención con previa confirmación.</p>
+        <p>Para una urgencia, escríbenos por WhatsApp y cuéntanos brevemente tu situación.</p>
+        <div class="location-actions">
+          <a class="btn btn-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20tengo%20una%20urgencia%20dental">
+            WhatsApp urgencias
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="container section faq-section">
+    <div class="section-head">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Antes de agendar</h2>
     </div>
 
-    <!-- Fallback de enlaces directos -->
-    <div class="links-fallback" style="margin-top:10px">
-      <small>Si no ves el calendario, usa estos enlaces:</small><br>
-      <a id="link-pozos" href="https://calendly.com/productosdelmomento/consulta-limpieza-primera-visita-villa-de-pozos" target="_blank" rel="noopener">Abrir Villa de Pozos</a>
-      <a id="link-escandon" href="https://calendly.com/productosdelmomento/30min" target="_blank" rel="noopener">Abrir San Juan de Guadalupe</a>
+    <div class="faq-grid">
+      <details class="faq-card">
+        <summary>¿Puedo pedir información por WhatsApp?</summary>
+        <p>Sí. Puedes escribirnos por WhatsApp para contarnos qué necesitas y te orientamos con la sucursal, horario y tipo de cita.</p>
+      </details>
+
+      <details class="faq-card">
+        <summary>¿Atienden urgencias los domingos?</summary>
+        <p>Sí, con previa confirmación por WhatsApp. Te recomendamos escribir primero para revisar disponibilidad.</p>
+      </details>
+
+      <details class="faq-card">
+        <summary>¿En qué sucursales atienden?</summary>
+        <p>Atendemos en Villa de Pozos y Escandón / San Juan de Guadalupe, en San Luis Potosí.</p>
+      </details>
+
+      <details class="faq-card">
+        <summary>¿Me explican costos antes de iniciar?</summary>
+        <p>Sí. Después de valorar tu caso, buscamos explicarte opciones, costos y próximos pasos de manera clara.</p>
+      </details>
     </div>
-  </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="container final-cta">
+    <div>
+      <span class="eyebrow">Agenda fácil</span>
+      <h2>¿Listo para cuidar tu sonrisa?</h2>
+      <p>Escríbenos por WhatsApp o elige tu horario en línea.</p>
+    </div>
+    <div class="final-actions">
+      <a class="btn btn-wa btn-lg" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita">
+        Agendar por WhatsApp
+      </a>
+      <a class="btn btn-primary btn-lg" href="/citas/#escandon">
+        Citas en línea
+      </a>
+    </div>
+  </section>
+
 </main>
 
-<footer class="container footer">
-  © GODENT Clínica Dental · <a href="/">Inicio</a>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>
+      © 2025 GODENT Clínica Dental · Atención en San Luis Potosí
+    </p>
+    <div>
+      <a href="/citas/#escandon">Citas en línea</a>
+      <a href="https://wa.me/524443238483">WhatsApp</a>
+      <a href="tel:+524443238483">Tel. 444 323 8483</a>
+      <a href="/privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
+    </div>
+  </div>
 </footer>
 
+<a class="floating-wa" href="https://wa.me/524443238483?text=Hola%20GODENT%2C%20quiero%20agendar%20una%20cita" aria-label="Agendar por WhatsApp">
+  WhatsApp
+</a>
+
 <script>
-  // URLs de tus eventos
-  const POZOS    = "https://calendly.com/productosdelmomento/consulta-limpieza-primera-visita-villa-de-pozos";
-  const ESCANDON = "https://calendly.com/productosdelmomento/30min";
-
-  const $tabPozos    = document.getElementById('tab-pozos');
-  const $tabEscandon = document.getElementById('tab-escandon');
-  const $hours       = document.getElementById('hours-text');
-  const $iframe      = document.getElementById('cal-iframe');
-
-  function buildSrc(base){
-    const u = new URL(base);
-    u.searchParams.set('embed_domain','godent.clinic');
-    u.searchParams.set('embed_type','Inline');
-    u.searchParams.set('hide_event_type_details','1');
-    u.searchParams.set('hide_gdpr_banner','1');
-    return u.toString();
-  }
-
-  function setPozos(){
-    $tabPozos.setAttribute('aria-selected','true');
-    $tabEscandon.setAttribute('aria-selected','false');
-    $hours.textContent = "Horarios Pozos: Mar, Jue y Sáb — 16:00 a 20:00.";
-    $iframe.src = buildSrc(POZOS);
-    history.replaceState(null, "", "#pozos");
-  }
-
-  function setEscandon(){
-    $tabEscandon.setAttribute('aria-selected','true');
-    $tabPozos.setAttribute('aria-selected','false');
-    $hours.textContent = "Horarios Escandón: Lun a Sáb — 10:00–14:00 y 16:00–20:00.";
-    $iframe.src = buildSrc(ESCANDON);
-    history.replaceState(null, "", "#escandon");
-  }
-
-  // Clicks
-  $tabPozos.addEventListener('click', setPozos);
-  $tabEscandon.addEventListener('click', setEscandon);
-
-  // Abrir directo por hash
-  if (location.hash === '#escandon') setEscandon(); else setPozos();
-</script>
-
-<!-- ===== Tracking correcto de reserva (SOLO cuando Calendly confirma) ===== -->
-<script>
-  // 1) Dispara "Schedule" solo cuando Calendly confirma la cita dentro del iframe
-  window.addEventListener('message', function(e){
-    try {
-      var data = e.data;
-      if (typeof data === 'object' && data.event === 'calendly.event_scheduled') {
-        fbq('track', 'Schedule'); // conversión real
-      }
-    } catch(_) {}
+  // Enviar "Schedule" cuando hagan clic en cualquier link que abra /citas/
+  document.querySelectorAll('a[href^="/citas/"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      try { fbq('track','Schedule'); } catch(e){}
+    });
   });
 
-  // 2) (Opcional) WhatsApp como "Contact"
+  // Enviar "Contact" cuando toquen WhatsApp
   document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){
     a.addEventListener('click', function(){
       try { fbq('track','Contact'); } catch(e){}
     });
   });
 </script>
+
 </body>
 </html>
