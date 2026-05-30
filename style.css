@@ -311,6 +311,7 @@ img{display:block;max-width:100%}
 
 .section h2,
 .why-heading h2,
+.why-intro h2,
 .faq-head h2,
 .final-cta h2{
   margin:14px 0 10px;
@@ -321,7 +322,8 @@ img{display:block;max-width:100%}
 }
 
 .section p,
-.why-heading p{
+.why-heading p,
+.why-intro p{
   margin:0;
   color:#475569;
   font-size:18px;
@@ -378,102 +380,128 @@ img{display:block;max-width:100%}
   font-size:15px;
 }
 
-/* WHY SECTION */
-.why-section{
-  padding:0;
-  background:#ffffff;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+/* WHY SECTION - CORREGIDA */
+#nosotros.why-section{
+  padding:0 !important;
+  background:#ffffff !important;
+  border-top:1px solid var(--line) !important;
+  border-bottom:1px solid var(--line) !important;
+  overflow:hidden !important;
 }
 
-.why-shell{
-  min-height:240px;
-  display:grid;
-  grid-template-columns:340px 1fr;
-  align-items:center;
-  gap:34px;
-  padding:34px 0;
+#nosotros .why-shell{
+  width:min(1180px,calc(100% - 40px)) !important;
+  margin:0 auto !important;
+  min-height:250px !important;
+  display:grid !important;
+  grid-template-columns:340px 1fr !important;
+  align-items:center !important;
+  gap:34px !important;
+  padding:34px 0 !important;
 }
 
-.why-image{
-  height:220px;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 18px 42px rgba(3,21,45,.10);
+#nosotros .why-image{
+  display:block !important;
+  height:220px !important;
+  border-radius:24px !important;
+  overflow:hidden !important;
+  box-shadow:0 18px 42px rgba(3,21,45,.12) !important;
 }
 
-.why-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+#nosotros .why-image img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
 }
 
-.why-content{
-  display:grid;
-  grid-template-columns:320px 1fr;
-  align-items:center;
-  gap:34px;
+#nosotros .why-body,
+#nosotros .why-content{
+  display:grid !important;
+  grid-template-columns:320px 1fr !important;
+  align-items:center !important;
+  gap:34px !important;
 }
 
-.why-heading .eyebrow{
-  margin-bottom:10px;
+#nosotros .why-intro,
+#nosotros .why-heading{
+  display:block !important;
 }
 
-.why-heading h2{
-  margin:0 0 10px;
-  color:var(--navy);
-  font-size:30px;
-  line-height:1.12;
-  letter-spacing:-.035em;
+#nosotros .why-intro .eyebrow,
+#nosotros .why-heading .eyebrow{
+  display:inline-flex !important;
+  width:max-content !important;
+  margin-bottom:10px !important;
+  padding:7px 13px !important;
+  border-radius:999px !important;
+  background:var(--blue-soft) !important;
+  color:var(--blue) !important;
+  font-size:12px !important;
+  font-weight:950 !important;
+  letter-spacing:.04em !important;
+  text-transform:uppercase !important;
 }
 
-.why-heading p{
-  margin:0;
-  color:#4b5d73;
-  font-size:15px;
-  line-height:1.5;
+#nosotros .why-intro h2,
+#nosotros .why-heading h2{
+  margin:0 0 10px !important;
+  color:var(--navy) !important;
+  font-size:30px !important;
+  line-height:1.12 !important;
+  letter-spacing:-.035em !important;
 }
 
-.why-features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+#nosotros .why-intro p,
+#nosotros .why-heading p{
+  margin:0 !important;
+  max-width:520px !important;
+  color:#4b5d73 !important;
+  font-size:15px !important;
+  line-height:1.5 !important;
 }
 
-.why-item{
-  position:relative;
-  padding:0;
-  background:transparent;
+#nosotros .why-features{
+  display:grid !important;
+  grid-template-columns:repeat(4,1fr) !important;
+  gap:18px !important;
+  align-items:start !important;
 }
 
-.why-icon{
-  width:42px;
-  height:42px;
-  margin-bottom:10px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#e8f1ff,#f7fbff);
-  color:var(--blue);
-  font-size:12px;
-  font-weight:950;
-  border:1px solid #cfe0ff;
+#nosotros .why-item{
+  display:block !important;
+  background:transparent !important;
+  padding:0 !important;
+  margin:0 !important;
 }
 
-.why-item h3{
-  margin:0 0 6px;
-  color:var(--navy);
-  font-size:15px;
-  line-height:1.2;
-  letter-spacing:-.015em;
+#nosotros .why-icon{
+  width:42px !important;
+  height:42px !important;
+  margin:0 0 10px !important;
+  border-radius:999px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:linear-gradient(135deg,#e8f1ff,#f7fbff) !important;
+  color:var(--blue) !important;
+  font-size:12px !important;
+  font-weight:950 !important;
+  border:1px solid #cfe0ff !important;
 }
 
-.why-item p{
-  margin:0;
-  color:#5b6b7f;
-  font-size:13px;
-  line-height:1.42;
+#nosotros .why-item h3{
+  margin:0 0 6px !important;
+  color:var(--navy) !important;
+  font-size:15px !important;
+  line-height:1.2 !important;
+  letter-spacing:-.015em !important;
+}
+
+#nosotros .why-item p{
+  margin:0 !important;
+  color:#5b6b7f !important;
+  font-size:13px !important;
+  line-height:1.42 !important;
 }
 
 /* LOCATIONS */
@@ -672,20 +700,21 @@ img{display:block;max-width:100%}
     grid-template-columns:repeat(3,1fr);
   }
 
-  .why-shell{
-    grid-template-columns:1fr;
+  #nosotros .why-shell{
+    grid-template-columns:1fr !important;
   }
 
-  .why-image{
-    height:260px;
+  #nosotros .why-image{
+    height:260px !important;
   }
 
-  .why-content{
-    grid-template-columns:1fr;
+  #nosotros .why-body,
+  #nosotros .why-content{
+    grid-template-columns:1fr !important;
   }
 
-  .why-features{
-    grid-template-columns:repeat(2,1fr);
+  #nosotros .why-features{
+    grid-template-columns:repeat(2,1fr) !important;
   }
 }
 
@@ -760,8 +789,7 @@ img{display:block;max-width:100%}
   }
 
   .services-grid,
-  .faq-grid,
-  .why-features{
+  .faq-grid{
     grid-template-columns:1fr;
   }
 
@@ -769,16 +797,22 @@ img{display:block;max-width:100%}
     height:200px;
   }
 
-  .why-shell{
-    padding:30px 0;
+  #nosotros .why-shell{
+    width:min(100% - 28px,1180px) !important;
+    padding:30px 0 !important;
   }
 
-  .why-image{
-    height:240px;
+  #nosotros .why-image{
+    height:240px !important;
   }
 
-  .why-heading h2{
-    font-size:30px;
+  #nosotros .why-features{
+    grid-template-columns:1fr !important;
+  }
+
+  #nosotros .why-intro h2,
+  #nosotros .why-heading h2{
+    font-size:30px !important;
   }
 
   .final-inner{
